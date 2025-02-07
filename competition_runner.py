@@ -34,6 +34,6 @@ if __name__ == "__main__":
         agents[comp_agent].load(comp_agent_folders[comp_agent])
 
     for agent in agents:
-        mean, std = evaluate_agent(agent, env)
+        mean, std = evaluate_agent(agent, env, num_episodes=100)
         print(f"Agent: {agent.__class__.__name__}")
         print(f"Mean: {mean}, Std: {std}")
