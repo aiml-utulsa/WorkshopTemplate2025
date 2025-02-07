@@ -2,7 +2,6 @@ from abc import ABC, abstractmethod
 
 
 class Agent(ABC):
-
     # These methods will be used by the environment runner to interact with the agent.
     @abstractmethod
     def take_action(self, observations):
