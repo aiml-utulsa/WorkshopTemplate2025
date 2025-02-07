@@ -28,11 +28,11 @@ if __name__ == "__main__":
         "./CompetitionAgents/randomAgent/",
     ]
 
-    env = gym.make("CartPole-v1")
+    env = gym.make("CartPole-v1", render_mode="human")
 
     for comp_agent in range(len(agents)):
         agents[comp_agent].load(comp_agent_folders[comp_agent])
-
+        print("Loaded agent: ", comp_agent)
     for agent in agents:
         mean, std = evaluate_agent(agent, env, num_episodes=100)
         print(f"Agent: {agent.__class__.__name__}")

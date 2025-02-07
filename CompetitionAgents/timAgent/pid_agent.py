@@ -4,7 +4,7 @@ import os
 
 
 class PID_Agent(Agent):
-    def __init__(self, kp=1.0, ki=0.0, kd=1.0):
+    def __init__(self, kp=1.0, ki=0.0, kd=0.0):
         self.kp = kp
         self.ki = ki
         self.kd = kd
@@ -26,13 +26,13 @@ class PID_Agent(Agent):
         if not os.path.exists(checkpoint_path):
             os.makedirs(checkpoint_path)
         np.save(
-            open(checkpoint_path + "kpkikd", "wb"),
+            open(checkpoint_path + "kpkikd.npy", "wb"),
             np.array([self.kp, self.ki, self.kd]),
         )
 
     def load(self, checkpoint_path):
-        if os.path.exists(checkpoint_path + "kpkikd"):
-            kpkikd = np.load(open(checkpoint_path + "kpkikd", "rb"))
+        if os.path.exists(checkpoint_path + "kpkikd.npy"):
+            kpkikd = np.load(open(checkpoint_path + "kpkikd.npy", "rb"))
             self.kp = kpkikd[0]
             self.ki = kpkikd[1]
             self.kd = kpkikd[2]
