@@ -4,7 +4,7 @@ import os
 
 
 class PID_Agent(Agent):
-    def __init__(self, kp=1.0, ki=0.0, kd=0.0):
+    def __init__(self, kp=1.0, ki=0.0, kd=4.0):
         self.kp = kp
         self.ki = ki
         self.kd = kd
@@ -14,6 +14,7 @@ class PID_Agent(Agent):
 
     def take_action(self, observations):
         # observations are position, velocity, pole angle, pole angular velocity
+        self.target = -observations[0] / 10
         angle = observations[2]
         error = self.target - angle
         self.integral += error
