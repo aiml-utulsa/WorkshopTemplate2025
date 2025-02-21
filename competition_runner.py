@@ -28,7 +28,7 @@ if __name__ == "__main__":
         "./CompetitionAgents/randomAgent/",
     ]
 
-    env = gym.make("CartPole-v1", render_mode="human")
+    env = gym.make("CartPole-v1")
 
     for comp_agent in range(len(agents)):
         agents[comp_agent].load(comp_agent_folders[comp_agent])
