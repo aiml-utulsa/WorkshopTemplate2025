@@ -1,0 +1,17 @@
+state,action,Q
+0,    'left',0.0
+0,    'down',0.0
+0,   'right',0.0
+0,      'up',0.0
+1,    'left',0.0
+1,    'down',0.0
+1,   'right',0.0
+1,      'up',0.0
+2,    'left',0.0
+2,    'down',0.0
+2,   'right',0.0
+2,      'up',0.0
+3,    'left',0.0
+3,    'down',0.0
+3,   'right',0.0
+3,      'up',0.0
