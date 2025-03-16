@@ -110,3 +110,4 @@ from CompetitionAgents.marlAgent.my_new_awesome_submission import coolAgent
     TBD Depending on the number if competitors
 
 6. Where do I submit sumbissions? 
+    Submit a google drive or one drive link in "2025-rl-workshop-submissions" channel in the discord or dm Tim the link if you do not want your submission to be seen by others.
