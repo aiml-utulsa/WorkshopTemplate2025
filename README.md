@@ -10,9 +10,11 @@ All agents must implement the `Agent` abstract base class. Your `__init__` funct
 class Agent(ABC):
     # These methods will be used by the environment runner to interact with the agent.
     @abstractmethod
-    def take_action(self, observations):
+    def take_action(self, observations, id=0):
         """Takes in a single observation (np.array) and returns
-        a discrete action."""
+        a discrete action. the id is this agent's number in case 
+        you train multiple policies so that your agent class can
+        identify which player is taking an action"""
         return 0  # Returns a single integer action
 
     @abstractmethod
@@ -56,11 +58,39 @@ class Random_Agent(Agent):
 
 ```
 
-Your python file will be loaded and run in the same directory as `Agent.py` like it does with the competition runner example provided. This means that you do not need to include `Agent.py` in your submission folder, but you may want to include it in your local file so that you don't have to change import functions upon submission. You may have as many sub folders as you like (no zip bombs, thank you, if you make me reinstall the vm you will get no prize and a dishonorable mention). Your own load function will be passed the path to your folder, what happens in your folder is your business so your model does not have to be a single `.npy` file as with the `kpkikd.npy` example.
+Your python file will be loaded and run in the same directory as `Agent.py` like it does with the competition runner example provided. This means that you do not need to include `Agent.py` in your submission folder, but you may want to include it in your local file so that you don't have to change import functions upon submission. You may have as many sub folders as you like (no zip bombs, thank you, if you make me reinstall the vm you will get no prize and a dishonorable mention). Your own load function will be passed the path to your folder, what happens in your folder is your business so your model does not have to be a single `.npy` file as with the `kpkikd.npy` example. 
 
 ## Multi-Agent Changes
 
-For the Multi-Agent competition using MLAgents, another example environment runner file will be provided when the competition opens to allow for testing. You will submit a single agent which will be cloned to control each of the individual units in the multi-agent challenge. This paradigm is called parameter sharing. Parameter sharing is required for this competition because there are 100+ agents at a time, so if you each submit 100 neural networks with 100 million parameters, the competition platform's gpu and harddrives will cry a little and then catch on fire. 
+For the Multi-Agent competition using MLAgents, another example environment runner `competition_runner_MARL` has been provided. You will submit a single agent class which will control all agents in the environment. If you do not use id to maintain separate agents (which we recommend) this paradigm is called parameter sharing. We recommend parameter sharing because it makes agent coordinatione easier and the poor gpu doesn't want to keep track of 10 neural networks. We are doing the 6v6 version of the environment pending feedback from club members.
+
+## Example Submission
+
+If I tim were to compete in this arena, I would submit a single .zip file called `tim_flavin_submission.zip` which contains one folder for the single agent challenge and one folder for the multi agent challenge. For example, I could submit the `./randomAgent/` folder included for this project and the `./Q_net_example/` folder both contained within this github repository. Also include a README.txt file which specifies which folder is for which challenge. 
+
+In order to test your submission, use the `competitionrunner_Single.py` and `competition_runner_MARL.py` but add your model and model paths to the list of models like 
+
+```python
+from CompetitionAgents.marlAgent.rand_agent import Random_Agent
+from CompetitionAgents.marlAgent.Q_net_example.Q_agent import Q_Agent
+
+#Your addition: 
+from CompetitionAgents.marlAgent.my_new_awesome_submission import coolAgent
+
+
+    agents = [Random_Agent(), Q_Agent()]
+    comp_agent_folders = [
+        "./CompetitionAgents/marlAgent/",
+        "./CompetitionAgents/marlAgent/Q_net_example/",
+        "./CompetitionAgents/marlAgent/", # your path which should be this,
+        # but if you have a sub folder like the Q example, you can add more path
+        # If you try to ../../../ your way our of my path to look for a passwords
+        # file you should know that this will run on a collab instance and you
+        # will be disqualified so don't do that.
+    ]
+
+```
+
 
 ## Q&A
 
@@ -68,7 +98,7 @@ For the Multi-Agent competition using MLAgents, another example environment runn
     Everybody makes mistakes, Tim will reach out if there is a code problem. 
 
 2. When will the multi agent competition runner be released?
-    On the competition start date, March 15, the official single agent and multi_agent environment runners will be released along with an example reinforcement learner for each environment. 
+    It is out! 
 
 3. What if I can't make it to a workshop?
     The workshop lectures will be posted online after each if you cannot attend in person. 
@@ -78,3 +108,5 @@ For the Multi-Agent competition using MLAgents, another example environment runn
 
 5. Can I work in groups?
     TBD Depending on the number if competitors
+
+6. Where do I submit sumbissions? 

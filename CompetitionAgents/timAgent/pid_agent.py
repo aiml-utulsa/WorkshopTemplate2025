@@ -12,7 +12,7 @@ class PID_Agent(Agent):
         self.integral = 0
         self.target = 0
 
-    def take_action(self, observations):
+    def take_action(self, observations, id=0):
         # observations are position, velocity, pole angle, pole angular velocity
         self.target = -observations[0] / 10
         angle = observations[2]

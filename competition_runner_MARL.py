@@ -6,43 +6,50 @@ from magent2.environments import battle_v4
 
 
 def evaluate_agent(agent1: Agent, agent2: Agent, env, num_episodes=10):
+    observations = env.reset()
+    max_agents = env.num_agents
     total_rewards = np.zeros((env.num_agents, num_episodes))
 
     for episode in range(num_episodes):
         observations = env.reset()
+        max_agents = env.num_agents
         agent_nums = {}
         for i, agent_name in enumerate(env.agents):
-            print(f"agent name: {agent_name} i {i}")
             agent_nums[agent_name] = i
         while env.agents:
             actions = {}
             for agent_name in env.agents:
                 if agent_name[0:3] == "red":
-                    actions[agent_name] = agent1.take_action(observations[agent_name])
+                    actions[agent_name] = agent1.take_action(
+                        observations[agent_name], id=agent_nums[agent_name]
+                    )
                 elif agent_name[0:4] == "blue":
-                    actions[agent_name] = agent2.take_action(observations[agent_name])
+                    actions[agent_name] = agent2.take_action(
+                        observations[agent_name],
+                        id=agent_nums[agent_name] - (max_agents // 2),
+                    )
             new_observations, rewards, terminations, truncations, info = env.step(
                 actions
             )
             for agent_name in env.agents:
                 total_rewards[agent_nums[agent_name], episode] += rewards[agent_name]
-    observations = env.reset()
-    print("total rewards: ", total_rewards)
-    print(env.num_agents)
+            observations = new_observations
     return (
-        np.mean(total_rewards[0 : env.num_agents // 2]),
-        np.std(total_rewards[0 : env.num_agents // 2]),
-        np.mean(total_rewards[env.num_agents // 2 :]),
-        np.std(total_rewards[env.num_agents // 2 :]),
+        np.mean(total_rewards[0 : max_agents // 2]),
+        np.std(total_rewards[0 : max_agents // 2]),
+        np.mean(total_rewards[max_agents // 2 :]),
+        np.std(total_rewards[max_agents // 2 :]),
     )
 
 
 if __name__ == "__main__":
     from CompetitionAgents.marlAgent.rand_agent import Random_Agent
+    from CompetitionAgents.marlAgent.Q_net_example.Q_agent import Q_Agent
 
-    agents = [Random_Agent()]
+    agents = [Random_Agent(), Q_Agent()]
     comp_agent_folders = [
         "./CompetitionAgents/marlAgent/",
+        "./CompetitionAgents/marlAgent/Q_net_example/",
     ]
 
     env = battle_v4.parallel_env(map_size=16, render_mode="human")

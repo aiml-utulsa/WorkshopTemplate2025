@@ -6,7 +6,7 @@ class Random_Agent(Agent):
     def __init__(self):
         print("initializing random agent")
 
-    def take_action(self, observations):
+    def take_action(self, observations, id=0):
         return random.randint(0, 1)
 
     def save(self, checkpoint_path):
