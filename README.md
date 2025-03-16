@@ -37,7 +37,7 @@ Your agents will be put into a list so that they can be matched against eachothe
 
 ### File Structure
 
-Your agents will be submitted via zip file such as "timAgent.zip". Please do not include your `__pycache__` folder for the workshop organizer's sanity and hard drive space. Inside your zip folder, you must include a python file `blah.py` which includes a class that implements `Agent` of the form: 
+Your agents will be submitted via zip files such as "timAgent1.zip". Please do not include your `__pycache__` folder for the workshop organizer's sanity and hard drive space. Inside your zip folder, you must include a python file `blah.py` which includes a class that implements `Agent` of the form: 
 
 ```python
 from Agent import Agent
@@ -66,7 +66,7 @@ For the Multi-Agent competition using MLAgents, another example environment runn
 
 ## Example Submission
 
-If I tim were to compete in this arena, I would submit a single .zip file called `tim_flavin_submission.zip` which contains one folder for the single agent challenge and one folder for the multi agent challenge. For example, I could submit the `./randomAgent/` folder included for this project and the `./Q_net_example/` folder both contained within this github repository. Also include a README.txt file which specifies which folder is for which challenge. 
+If I tim were to compete in this arena, I would submit a single .zip file called `tim_flavin_single_agent.zip` which contains everything needed for the single agent challenge (besides `__pycache__` do not include your pychache) and one folder for the multi agent challenge. For example, I could submit the `./timAgent/` folder included for this project and the `./marlAgent/Q_net_example/` folder both contained within this github repository. Also include a README.txt or a description in your project report file which specifies which folder is for which challenge and the name of the main python file. For example the `/Q_net_example` folder is for the multi-agent challenge, and the `Q_agent.py` file is the main file. 
 
 In order to test your submission, use the `competitionrunner_Single.py` and `competition_runner_MARL.py` but add your model and model paths to the list of models like 
 
@@ -110,4 +110,4 @@ from CompetitionAgents.marlAgent.my_new_awesome_submission import coolAgent
     TBD Depending on the number if competitors
 
 6. Where do I submit sumbissions? 
-    Submit a google drive or one drive link in "2025-rl-workshop-submissions" channel in the discord or dm Tim the link if you do not want your submission to be seen by others.
+    Submit your agents via the "2025-rl-workshop-submissions" channel microsoft form!
