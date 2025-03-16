@@ -5,9 +5,9 @@ The **Spring 2025 AIML@TU Reinforcement Learning Zero to Hero Workshop and Compe
 
 ## View Session Recordings:
 
-[Session #1 2/22/25 (Introduction to Reinforcement Learning)](https://app.bluedothq.com/preview/67ba0d4c6c00e2181fba914d): Multi-armed bandits, contextual bandits, Markov Decision Processes, reinforcement learning objective, frozen lake environment example, policy iteration, Monte Carlo vs. Dynamic Programming, temporal difference learning, neural networks in RL.
+[Session #1 2/22/25 (Introduction to Reinforcement Learning)](https://app.bluedothq.com/preview/67ba0d4c6c00e2181fba914d?timestamp=1064.500395): Multi-armed bandits, contextual bandits, Markov Decision Processes, reinforcement learning objective, frozen lake environment example, policy iteration, Monte Carlo vs. Dynamic Programming, temporal difference learning, neural networks in RL.
 
-[Session #2 3/1/25 (Intro to Q-Learning)](https://app.bluedothq.com/preview/67c34acbb429ce84e208ba11): RL Goal, environment dynamics, Q-learning concept, Python implementation, Q-learning implementation, policy improvement, intro to Google Colab.
+[Session #2 3/1/25 (Intro to Q-Learning)](https://app.bluedothq.com/preview/67c34acbb429ce84e208ba11?timestamp=390.18527): RL Goal, environment dynamics, Q-learning concept, Python implementation, Q-learning implementation, policy improvement, intro to Google Colab.
 
 [Session #3 3/8/25 (Implementing Q-Learning)](https://app.bluedothq.com/preview/67cc82d7e070d428efa67aa9): Q-Learning implementation, epsilon-greedy vs. optimistic intitialization, cart pole environment, descretization of continuous states, limitations of discretization.
 
