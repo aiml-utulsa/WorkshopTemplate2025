@@ -1,5 +1,20 @@
-# WorkshopTemplate2025
-The 2025 TU AI / ML Spring workshop is coming soon! This repository provides an example of how to submit a model to the competition as well as the abstract class that all agents will be implementing.
+# WELCOME!
+The **Spring 2025 AIML@TU Reinforcement Learning Zero to Hero Workshop and Competition** is here! This page provides information about how to view the recorded workshop sessions, access workshop materials, and submit a model to the competition as well as the abstract class that all agents will be implementing.
+
+## [Competition Rules Here](https://github.com/aiml-utulsa/WorkshopTemplate2025/blob/main/RULES.md)
+
+## View Session Recordings:
+
+[Session #1 2/22/25 (Introduction to Reinforcement Learning)](https://app.bluedothq.com/preview/67ba0d4c6c00e2181fba914d?timestamp=1064.500395): Multi-armed bandits, contextual bandits, Markov Decision Processes, reinforcement learning objective, frozen lake environment example, policy iteration, Monte Carlo vs. Dynamic Programming, temporal difference learning, neural networks in RL.
+
+[Session #2 3/1/25 (Intro to Q-Learning)](https://app.bluedothq.com/preview/67c34acbb429ce84e208ba11?timestamp=390.18527): RL Goal, environment dynamics, Q-learning concept, Python implementation, Q-learning implementation, policy improvement, intro to Google Colab.
+
+[Session #3 3/8/25 (Implementing Q-Learning)](https://app.bluedothq.com/preview/67cc82d7e070d428efa67aa9): Q-Learning implementation, epsilon-greedy vs. optimistic intitialization, cart pole environment, descretization of continuous states, limitations of discretization.
+
+[Session #4 3/15/25 (Intro to Q-networks)](https://app.bluedothq.com/preview/67d5b31088f84dca4f17eb24): Transition from Q-tables to Q-networks, neural network basics and implementation, Q-network implementation, memory buffer implementation, debugging and final implementation.
+
+## Code for all sessions
+[Copy/paste this code from Google Colab to get started!](https://colab.research.google.com/drive/1jJOLOlI28JuhT1sGx6J-bsXNhL0oDOC7?usp=sharing)
 
 ## How to format your agent
 
