@@ -98,9 +98,6 @@ class Q_Agent(Agent):
         for i in range(16):
             for j in range(16):
                 for z in range(3):
-                    # print(i, j, z)
-                    # print(i * 6, (i + 1) * 6, j * 6, (j + 1) * 6)
-                    # print(obs[i * 6 : (i + 1) * 6, j * 6 : (j + 1) * 6, z].shape)
                     new_obs[i][j][z] = (
                         np.mean(obs[i * 6 : (i + 1) * 6, j * 6 : (j + 1) * 6, z]) / 255
                     )

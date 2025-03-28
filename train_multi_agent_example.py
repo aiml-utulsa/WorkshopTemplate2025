@@ -1,7 +1,6 @@
 from CompetitionAgents.marlAgent.Q_net_example.Q_agent import Q_Agent
 from CompetitionAgents.marlAgent.rand_agent import Random_Agent
 from CompetitionAgents.marlAgent.Q_net_example.Q_agent import Mem_Buffer
-from torch import nn
 import numpy as np
 from Agent import Agent
 from magent2.environments import battle_v4

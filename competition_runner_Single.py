@@ -1,7 +1,6 @@
 import gymnasium as gym
 import numpy as np
 from Agent import Agent
-import random
 
 
 def evaluate_agent(agent: Agent, env, num_episodes=10):

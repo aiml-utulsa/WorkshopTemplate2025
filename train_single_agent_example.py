@@ -1,11 +1,10 @@
 from CompetitionAgents.singleAgent.Q_net_example.Q_agent import Q_Agent
 from CompetitionAgents.marlAgent.rand_agent import Random_Agent
 from CompetitionAgents.singleAgent.Q_net_example.Q_agent import Mem_Buffer
-from torch import nn
-import numpy as np
 from Agent import Agent
 import gymnasium as gym
 import torch
+import pygame
 
 
 def train_loop(
@@ -23,6 +22,7 @@ def train_loop(
     epsilon_decay = 0.98  # decay rate for exploration probability
 
     for episode in range(num_episodes):
+        keys = {"w": False, "a": False, "s": False, "d": False}
         epsilon = max(0.05, epsilon * epsilon_decay)  # decay the exploration rate
         print(epsilon)
         tot_reward = 0
@@ -31,7 +31,46 @@ def train_loop(
         step = 0
         terminated, truncated = False, False
         while not (terminated or truncated):
-            action = agent.take_action(observation, id=0)
+
+            action = -1
+            for event in pygame.event.get():
+                # get wasd input
+                if event.type == pygame.KEYDOWN:
+                    print("kes")
+                    if event.key == pygame.K_w:
+                        keys["w"] = True
+                    elif event.key == pygame.K_a:
+                        keys["a"] = True
+                    elif event.key == pygame.K_s:
+                        keys["s"] = True
+                    elif event.key == pygame.K_d:
+                        keys["d"] = True
+                    elif event.key == pygame.K_ESCAPE:
+                        exit(0)
+                    print(action)
+                if event.type == pygame.KEYUP:
+                    print("kes")
+                    if event.key == pygame.K_w:
+                        keys["w"] = False
+                    elif event.key == pygame.K_a:
+                        keys["a"] = False
+                    elif event.key == pygame.K_s:
+                        keys["s"] = False
+                    elif event.key == pygame.K_d:
+                        keys["d"] = False
+                    elif event.key == pygame.K_ESCAPE:
+                        exit(0)
+                    print(keys)
+            if keys["w"]:
+                action = 3
+            if keys["a"]:
+                action = 2
+            if keys["s"]:
+                action = 4
+            if keys["d"]:
+                action = 1
+            if action == -1:
+                action = agent.take_action(observation, id=0)
             new_observation, reward, terminated, truncated, info = env.step(action)
             new_observation = agent.transform_obs(new_observation)
             tot_reward += reward
