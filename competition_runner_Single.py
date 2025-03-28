@@ -21,12 +21,13 @@ def evaluate_agent(agent: Agent, env, num_episodes=10):
 
 
 if __name__ == "__main__":
-    from CompetitionAgents.timAgent.pid_agent import PID_Agent
+    from CompetitionAgents.singleAgent.Q_net_example import Q_agent
     from CompetitionAgents.randomAgent.rand_agent import Random_Agent
 
-    agents = [Random_Agent()]
+    agents = [Random_Agent(), Q_agent]
     comp_agent_folders = [
-        "./CompetitionAgents/timAgent/",
+        "./CompetitionAgents/randomAgent/",
+        "./CompetitionAgents/singleAgent/Q_net_example/",
     ]
 
     env = gym.make(

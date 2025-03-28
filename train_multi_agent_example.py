@@ -103,7 +103,7 @@ def train_loop(
                         loss.backward()  # backpropagate loss
                         agent1.optimizer.step()  # update weights
 
-            observations_ = new_observations.copy()
+            observations = new_observations.copy()
 
         step += 1
         print(tot_reward)
