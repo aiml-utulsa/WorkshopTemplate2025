@@ -1,6 +1,8 @@
 # WELCOME!
 The **Spring 2025 AIML@TU Reinforcement Learning Zero to Hero Workshop and Competition** is here! This page provides information about how to view the recorded workshop sessions, access workshop materials, and submit a model to the competition as well as the abstract class that all agents will be implementing.
 
+Submission Link: https://forms.office.com/Pages/ResponsePage.aspx?id=PAH_1LdiZ0GST1vZPoIC0z85eZBVSDlNrvRCaZtRpNFUQ0QzNDVOQTZTUUtLRTJERjQzTkxKS1FQSi4u
+
 ## [Competition Rules Here](https://github.com/aiml-utulsa/WorkshopTemplate2025/blob/main/RULES.md)
 
 ## View Session Recordings:
