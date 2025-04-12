@@ -5,6 +5,18 @@ Submission Link: https://forms.office.com/Pages/ResponsePage.aspx?id=PAH_1LdiZ0G
 
 ## [Competition Rules Here](https://github.com/aiml-utulsa/WorkshopTemplate2025/blob/main/RULES.md)
 
+## Setting up the environment!
+
+1. Install Python (preferably 3.11 because pip in 3.12+ removed some depricated libraries for installers and it can cause problems for libraries that are not actively maintained). So go here: https://www.python.org/downloads/ and scroll to 3.11.8 or 3.11.9 to get an installer link and install it like at https://www.python.org/downloads/release/python-3119/ then MAKE SURE TO CHECK THE BOX THAT ADDS PYTHON TO YOUR PATH!!!!! if not you have to do that yourself so look up editing system environment variables on windows or something like etc bashrc in linux. 
+
+2. install git
+
+3. `git clone https://github.com/aiml-utulsa/WorkshopTemplate2025`
+
+4. navigate into the folder in terminal like "cd desktop" "cd WorkshopTemplate2025" that just cloned and create a virtual environment with your python. `python -m venv "som_env_name_you_like"` or if you want a particular version of python `py -3.11 -m venv "blah"`. Then on linux do `source ./blah/Scripts/activate` or on windows `./blah/Scripts/activate` to enter the virtual environment. This is basically a fresh python env with nothing installed
+
+5. Either look at the `pip_commands.txt` file and just do each command in order (might need different torch command based on your gpu/operating system so go here: https://pytorch.org/get-started/locally/ ) and if you do those commands in that order you should be good! Or you can use the requirements.txt method instead. 
+
 ## View Session Recordings:
 
 [Session #1 2/22/25 (Introduction to Reinforcement Learning)](https://app.bluedothq.com/preview/67ba0d4c6c00e2181fba914d?timestamp=1064.500395): Multi-armed bandits, contextual bandits, Markov Decision Processes, reinforcement learning objective, frozen lake environment example, policy iteration, Monte Carlo vs. Dynamic Programming, temporal difference learning, neural networks in RL.
