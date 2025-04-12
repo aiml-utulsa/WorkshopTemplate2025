@@ -106,4 +106,6 @@ class Q_Agent(Agent):
         print("Saved model to", checkpoint_path)
 
     def load(self, checkpoint_path):
-        self.Q_net.load_state_dict(torch.load(checkpoint_path + "Q_net_test"))
+        self.Q_net.load_state_dict(
+            torch.load(checkpoint_path + "Q_net_test", weights_only=True)
+        )

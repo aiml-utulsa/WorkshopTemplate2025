@@ -123,14 +123,14 @@ def train_loop(
 if __name__ == "__main__":
     agents = [Q_Agent(obs_dim=16 * 16 * 3, action_dim=5, hidden_dim=64), Random_Agent()]
     comp_agent_folders = [
-        "./CompetitionAgents/marlAgent/Q_net_example/",  # Q agent
+        "./CompetitionAgents/singleAgent/Q_net_example/",  # Q agent
     ]
 
     agents[0].save(comp_agent_folders[0])  # save the agent to the folder
     agents[0].load(comp_agent_folders[0])
 
     env = gym.make(
-        "CarRacing-v2",  # v3 for linux
+        "CarRacing-v3",  # v3 for linux
         render_mode="human",
         lap_complete_percent=0.95,
         domain_randomize=False,

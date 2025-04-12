@@ -20,17 +20,17 @@ def evaluate_agent(agent: Agent, env, num_episodes=10):
 
 
 if __name__ == "__main__":
-    from CompetitionAgents.singleAgent.Q_net_example import Q_agent
+    from CompetitionAgents.singleAgent.Q_net_example.Q_agent import Q_Agent
     from CompetitionAgents.randomAgent.rand_agent import Random_Agent
 
-    agents = [Random_Agent(), Q_agent]
+    agents = [Random_Agent(), Q_Agent()]
     comp_agent_folders = [
         "./CompetitionAgents/randomAgent/",
         "./CompetitionAgents/singleAgent/Q_net_example/",
     ]
 
     env = gym.make(
-        "CarRacing-v2",  # v3 for linux
+        "CarRacing-v3",  # v3 for linux
         render_mode="human",
         lap_complete_percent=0.95,
         domain_randomize=False,

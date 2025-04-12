@@ -1,5 +1,4 @@
 import gymnasium as gym
-import magent2.environment
 import numpy as np
 from Agent import Agent
 from magent2.environments import battle_v4
