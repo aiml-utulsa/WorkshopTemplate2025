@@ -27,6 +27,8 @@ Submission Link: https://forms.office.com/Pages/ResponsePage.aspx?id=PAH_1LdiZ0G
 
 [Session #4 3/15/25 (Intro to Q-networks)](https://app.bluedothq.com/preview/67d5b31088f84dca4f17eb24): Transition from Q-tables to Q-networks, neural network basics and implementation, Q-network implementation, memory buffer implementation, debugging and final implementation.
 
+[Session #5 3/29/25 (Intro to Neural Networks)](https://app.bluedothq.com/preview/67e82b2785bc4e7b7b98782c): Intro to Neural Networks, Non-linearity in Neural Networks, Training Nerual Networks, Implementing Q-Learning with Neural Networks, Challenges and Improvements, Competition Information.
+
 ## Code for all sessions
 [Copy/paste this code from Google Colab to get started!](https://colab.research.google.com/drive/1jJOLOlI28JuhT1sGx6J-bsXNhL0oDOC7?usp=sharing)
 
