@@ -27,7 +27,7 @@ def train_loop(
         print(epsilon)
         tot_reward = 0
         observation, info = env.reset()
-        observation = agent.transform_obs(observation)
+        compressed_observation = agent.transform_obs(observation)
         step = 0
         terminated, truncated = False, False
         while not (terminated or truncated):
@@ -72,14 +72,14 @@ def train_loop(
             if action == -1:
                 action = agent.take_action(observation, id=0)
             new_observation, reward, terminated, truncated, info = env.step(action)
-            new_observation = agent.transform_obs(new_observation)
+            new_compressed_observation = agent.transform_obs(new_observation)
             tot_reward += reward
 
             mem_buffer.add(
-                observation.flatten(),
+                compressed_observation.flatten(),
                 action,
                 reward,
-                new_observation.flatten(),
+                new_compressed_observation.flatten(),
                 float(terminated),
             )
 
@@ -111,6 +111,7 @@ def train_loop(
                     agent.optimizer.step()  # update weights
 
             observation = new_observation.copy()
+            compressed_observation = new_compressed_observation.copy()
 
         step += 1
         print(tot_reward)

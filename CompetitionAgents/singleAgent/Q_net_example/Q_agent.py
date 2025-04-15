@@ -11,7 +11,9 @@ import matplotlib.pyplot as plt
 
 
 class Mem_Buffer:
-    def __init__(self, max_size=10000, obs_dim=13 * 13 * 5, action_dim=21):
+    def __init__(
+        self, max_size=10000, obs_dim=16 * 16 * 3, action_dim=5, hidden_dim=64
+    ):
         self.max_size = max_size
         self.states = np.zeros((10000, obs_dim))
         self.states_ = np.zeros((10000, obs_dim))
@@ -78,7 +80,7 @@ class Q_network(nn.Module):
 
 class Q_Agent(Agent):
     def __init__(
-        self, obs_dim=96 * 96 * 3, action_dim=21, hidden_dim=32, device="cuda:0"
+        self, obs_dim=16 * 16 * 3, action_dim=5, hidden_dim=64, device="cuda:0"
     ):
         self.Q_net = Q_network(
             obs_dim=obs_dim,  # from MAgent2 environment or racing environment
@@ -107,6 +109,7 @@ class Q_Agent(Agent):
         return new_obs
 
     def take_action(self, observation, id=0):
+        observation = self.transform_obs(observation)
         if random.random() < 0.05:
             return random.randint(0, self.discrete_dim - 1)
         with torch.no_grad():

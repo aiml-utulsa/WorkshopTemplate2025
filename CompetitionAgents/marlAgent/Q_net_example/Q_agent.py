@@ -78,7 +78,7 @@ class Q_network(nn.Module):
 
 class Q_Agent(Agent):
     def __init__(
-        self, obs_dim=13 * 13 * 5, action_dim=21, hidden_dim=32, device="cuda:0"
+        self, obs_dim=13 * 13 * 5, action_dim=21, hidden_dim=64, device="cuda:0"
     ):
         self.Q_net = Q_network(
             obs_dim=obs_dim,  # from MAgent2 environment or racing environment
