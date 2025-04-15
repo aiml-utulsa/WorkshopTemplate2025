@@ -13,9 +13,13 @@ Submission Link: https://forms.office.com/Pages/ResponsePage.aspx?id=PAH_1LdiZ0G
 
 3. `git clone https://github.com/aiml-utulsa/WorkshopTemplate2025`
 
-4. navigate into the folder in terminal like "cd desktop" "cd WorkshopTemplate2025" that just cloned and create a virtual environment with your python. `python -m venv "som_env_name_you_like"` or if you want a particular version of python `py -3.11 -m venv "blah"`. Then on linux do `source ./blah/Scripts/activate` or on windows `./blah/Scripts/activate` to enter the virtual environment. This is basically a fresh python env with nothing installed
+4. navigate into the folder in terminal like "cd desktop" "cd WorkshopTemplate2025" that just cloned and create a virtual environment with your python. `python -m venv "som_env_name_you_like"` or if you want a particular version of python `py -3.11 -m venv "blah"`. Then on linux do `source ./blah/bin/activate` or on windows `./blah/Scripts/activate` to enter the virtual environment. This is a fresh python env with nothing installed
 
-5. Either look at the `pip_commands.txt` file and just do each command in order (might need different torch command based on your gpu/operating system so go here: https://pytorch.org/get-started/locally/ ) and if you do those commands in that order you should be good! Or you can use the requirements.txt method instead. 
+4.5. If on linux or mac, install swig using (MAC) `brew install swig` or (UBUNTU) `sudo apt install swig` or whatever package manager your pc uses. 
+
+5. Go the `pip_commands.txt` file and just do each command in order (Get a different torch command based on your gpu/cpu/operating system so go here: https://pytorch.org/get-started/locally/  and click on the version you want. If you dont have an nvidia gpu then dont pick a cuda option) and if you do those commands in that order you should be good!. Lots of folks have issues getting box2d set up because it's a terrible library made by an evil person (not really) but it has problems. Sorry.
+
+5.5. If you do not have a cuda version or torch, then your models can't live on a cuda gpu so everywhere in the code that it says `device='cuda:0'` change that to `device='cpu'`.
 
 ## View Session Recordings:
 
